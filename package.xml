@@ -11,7 +11,10 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>roscpp</build_depend>
+  <build_depend>ros_drake</build_depend>
   <build_export_depend>roscpp</build_export_depend>
+
+  <exec_depend>drake</exec_depend>
 
   <export>
   </export>
