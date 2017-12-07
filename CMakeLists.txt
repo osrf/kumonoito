@@ -12,6 +12,9 @@ catkin_package(
   CATKIN_DEPENDS roscpp
 )
 
+# TODO: this should be ported to ros_drake if needed (check ABI in libdrake)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 ###########
 ## Build ##
 ###########
