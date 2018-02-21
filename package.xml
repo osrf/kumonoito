@@ -13,18 +13,17 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>joint_state_publisher</build_depend>
-  <build_depend>robot_state_publisher</build_depend>
   <build_depend>ros_drake</build_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>sensor_msgs</build_depend>
 
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
+  <depend>joint_state_publisher</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>roscpp</depend>
+  <depend>rosgraph_msgs</depend>
+  <depend>sensor_msgs</depend>
+
+  <!-- tf is only used in launch files -->
   <exec_depend>tf</exec_depend>
 
-  <build_export_depend>joint_state_publisher</build_export_depend>
-  <build_export_depend>robot_state_publisher</build_export_depend>
   <build_export_depend>ros_drake</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>sensor_msgs</build_export_depend>

@@ -7,6 +7,7 @@ find_package(catkin REQUIRED
     robot_state_publisher
     ros_drake
     roscpp
+    rosgraph_msgs
     sensor_msgs
 )
 
@@ -20,6 +21,7 @@ catkin_package(
     robot_state_publisher
     ros_drake
     roscpp
+    rosgraph_msgs
     sensor_msgs
 )
 
@@ -42,6 +44,8 @@ target_link_libraries(jaco_common ${catkin_LIBRARIES})
 add_library(ros_joint_state_publisher src/ros_joint_state_publisher.cc)
 target_link_libraries(ros_joint_state_publisher
         ${catkin_LIBRARIES})
+# ros_joint_state_publisher depends on rosgraph_msgs, needs the catkin_EXPORTED_TARGETS
+add_dependencies(ros_joint_state_publisher ${catkin_EXPORTED_TARGETS})
 
 add_library(ros_tf_publisher src/ros_tf_publisher.cc)
 target_link_libraries(ros_tf_publisher
@@ -68,13 +72,14 @@ target_link_libraries(controlled_jaco_simulation_demo
         ros_tf_publisher
         ros_subscriber_system)
 
-# Install targets
+###################
+# Install targets #
+###################
 
 # Binaries
 install(TARGETS controlled_jaco_simulation_demo jaco_passive_simulation_demo
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-)
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
 # Libraries
 install(TARGETS ros_subscriber_system
                 ros_publisher_system
