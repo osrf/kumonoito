@@ -1,15 +1,31 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>kumonoito</name>
-  <version>0.0.0</version>
-  <description>The kumonoito package</description>
+  <version>0.0.1</version>
+  <description>
+  This repository exemplifies Drake simulations and systems that communicate
+  via ROS and LCM messages
+  </description>
 
   <maintainer email="naveenoid@todo.todo">naveenoid</maintainer>
-  <license>TODO</license>
-
-  <build_depend>ros_drake</build_depend>
-  <build_depend>robot_state_publisher</build_depend>
+  <license>BSD-3-Clause</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>joint_state_publisher</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <build_depend>ros_drake</build_depend>
   <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>tf</exec_depend>
+
+  <build_export_depend>joint_state_publisher</build_export_depend>
+  <build_export_depend>robot_state_publisher</build_export_depend>
+  <build_export_depend>ros_drake</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
 </package>
