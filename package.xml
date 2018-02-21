@@ -11,5 +11,6 @@
   <build_depend>robot_state_publisher</build_depend>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslint</build_depend>
   <build_depend>roscpp</build_depend>
 </package>

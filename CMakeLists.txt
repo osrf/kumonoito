@@ -3,6 +3,7 @@ project(kumonoito)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  roslint
   ros_drake
 )
 
@@ -53,3 +54,6 @@ target_link_libraries(controlled_jaco_simulation_demo
         ros_joint_state_publisher
         ros_tf_publisher
         ros_subscriber_system)
+
+# Run QA tool
+roslint_cpp()
